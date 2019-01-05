@@ -2,7 +2,11 @@
 
 This is a collection of things to do on a Raspberry Pi. It's cobbled together from various projects that I've written for different classes. I decided it would be best to collect them all in one place.
 
+## Hardware Configuration
+
 I tend to use the [Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) as my primary board, and I operate it as a standalone device, with no screen or keyboard. To access it initially, I use either a serial connection or a USB connection. My default OS distribution is [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/). I generally use a 16GB or 32GB SD card. Unless noted otherwise, the examples here are all built on that configuration.
+
+The [Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) is my go-to for when I need 5GHz WiFi or more processing power.
 
 ## Setting Up A Raspberry Pi Securely
 
