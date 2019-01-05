@@ -35,4 +35,4 @@ This assumes the following:
 
 The command will output a video file called `video.mp4`.
 
-Hammad Mazhar's page on [stitching photos together with ffmpeg] is a good summary of how to do it. (http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/) They cover a number of additional techniques such as start and end frames, converting from other formats, etc.
+Hammad Mazhar's page on [stitching photos together with ffmpeg](http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/) is a good summary of how to do it. They cover a number of additional techniques such as start and end frames, converting from other formats, etc.
