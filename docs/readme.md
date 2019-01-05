@@ -8,6 +8,10 @@ I tend to use the [Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-
 
 The [Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) is my go-to for when I need 5GHz WiFi or more processing power.
 
+## The Raspberry Pi Documentation Pages
+
+Before you run off to search for a term + raspberry pi on Google, check out the [Raspberry Pi foundation's documentation pages](https://www.raspberrypi.org/documentation/). They're succinct, clear, and helpful. In particular, their [Introduction to Linux section](https://www.raspberrypi.org/documentation/linux/) is as good as intro as any out there.
+
 ## Setting Up A Raspberry Pi Securely
 
 The first thing you should do for any Pi-based project is to configure a secure system. By switching from the default settings (such as username pi) and setting up a firewall, you can reduce the risl that your device will be compromised by external attacks. You can find a detailed tutorial on [configuring a Pi reasonably securely](https://itp.nyu.edu/networks/tutorials/setting-up-a-raspberry-pi/) on the [ITP Networks site](https://itp.nyu.edu/networks). There's also a [longer intro to firewalls](0https://itp.nyu.edu/networks/tutorials/setting-up-a-firewall-on-an-embedded-linux-device/) on that site.
