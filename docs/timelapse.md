@@ -35,4 +35,16 @@ This assumes the following:
 
 The command will output a video file called `video.mp4`.
 
+If your images are all not rotated quite right, you can rotate them using the rotate filter:
+
+````
+-vf "rotate=degrees*PI/180"
+````
+
+Replace `degrees` above with a rotation value in degrees. Negative numbers are counterclockwise rotation, and positive are clockwise. So to rotate all images counterclockwise by 2 degrees:
+
+````
+ffmpeg -r 30 -f image2 -s 1920x1080 -i image%04d.jpg -vf "rotate=-2*PI/180" -vcodec libx264 -crf 25  -pix_fmt yuv420p video.mp4
+````
+
 Hammad Mazhar's page on [stitching photos together with ffmpeg](http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/) is a good summary of how to do it. They cover a number of additional techniques such as start and end frames, converting from other formats, etc.
