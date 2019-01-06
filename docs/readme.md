@@ -18,3 +18,4 @@ The first thing you should do for any Pi-based project is to configure a secure 
 
 * [Cron Jobs](cronjobs.md)
 * [Time Lapse Photography](timelapse.md)
+* [Using X11 for Windowed applications through the command line](X11.md)
