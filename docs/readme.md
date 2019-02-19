@@ -19,4 +19,5 @@ The first thing you should do for any Pi-based project is to configure a secure 
 * [Cron Jobs](cronjobs.md)
 * [Time Lapse Photography](timelapse.md)
 * [Using X11 for Windowed applications through the command line](X11.md)
+* [Digital Input and Output using the GPIO pins](https://github.com/tigoe/NodeSensorExamples/tree/master/gpio-input)
 * [Connecting an analog-to-digital converter](https://github.com/tigoe/NodeSensorExamples/tree/master/adc-mcp-3xxx) for analog sensor input
