@@ -1,0 +1,23 @@
+{
+   "name": "oled-clock",
+   "version": "0.0.1",
+   "description": "A demonstration of the oled-i2c-bus library",
+   "main": "clock.js",
+   "dependencies": {
+     "i2c-bus": "^5.1.0",
+     "oled-font-5x7": "^1.0.3",
+     "oled-i2c-bus": "^1.0.11"
+   },
+   "devDependencies": {},
+   "scripts": {
+     "test": "sudo node clock.js"
+   },
+   "keywords": [
+     "oled",
+     "ssd1306",
+     "i2c",
+     "clock"
+   ],
+   "author": "Tom Igoe",
+   "license": "ISC"
+ }
