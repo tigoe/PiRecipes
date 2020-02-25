@@ -8,4 +8,4 @@ To connect the screen to the Pi, just connect the SDA and SCL lines to the Pi's 
 
 ## The Code
 
-The library provides many [examples](https://www.npmjs.com/package/oled-i2c-bus#i2c-screens) in its documentation, and they're a good place to get started. Here's an [example that runs a clock on the screen](XXX)
+The library provides many [examples](https://www.npmjs.com/package/oled-i2c-bus#i2c-screens) in its documentation, and they're a good place to get started. Here's an [example that runs a clock on the screen](https://github.com/tigoe/PiRecipes/tree/master/SSD1306Display).
