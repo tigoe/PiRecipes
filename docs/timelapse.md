@@ -5,7 +5,38 @@ A single-board computer running Linux, like the Raspberry Pi, can take time laps
 ## Use the Built-In Camera and raspistill
 If you're using the Pi cam, then you can use the raspistill app to take photos. There is an [intro to raspicam on the Raspberry Pi site](https://www.raspberrypi.org/documentation/usage/camera/raspicam/) that's very good. There's also a page on [using raspistill to make time lapses](https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md).
 
-The advantage to using the built-in camera is that it's fast, and the Raspberry Pi foundation has put a lot of work into making the camera interface usable. I'm also quite fond of the Pi Zero case that has a built-in camera mount on the lid. The disadvantage is that the Pi cameras tend to be a bit more expensive than other camera options. You can also use other cameras that use the same interface with other cameras. 
+The advantage to using the built-in camera is that it's fast, and the Raspberry Pi foundation has put a lot of work into making the camera interface usable. I'm also quite fond of the Pi Zero case that has a built-in camera mount on the lid. The disadvantage is that the Pi cameras tend to be a bit more expensive than other camera options. amd it's not as high resolution as many standard webcams these days. You can also use other cameras that use the same interface with other cameras. 
+
+Here's a quickstart to setting up the built-in Pi camera:
+
+Once you've got the camera connected, you need to give yourself permission to access the camera in the device (/dev) directory. To do that, type the following on the command line:
+
+````
+$ sudo usermod -a -G video $(whoami)
+````
+
+This will make you a member of the `video` group of users who can access the camera device. Now logout and log back in.
+
+Now you're ready to take a picture. Type the following:
+
+````
+raspistill -o cam.jpg
+````
+The `-o cam.jpg` is telling the raspistill program to output to a file called `cam.jpg` in the current working directory. After a few seconds, type `ls` to see if there's a new file in your directory called `cam.jpg`. If so, you're all set. 
+
+You can change a number of options in the raspistill app. type `raspistill --help` to get the full list, or see the documentation links above. Here are some of the more common ones (quoted from the documentation):
+
+* -q, --quality	: Set jpeg quality <0 to 100>
+* -r, --raw	: Add raw bayer data to jpeg metadata
+* -tl, --timelapse	: Timelapse mode. Takes a picture every <t>ms. %d == frame number (Try: -o img_%04d.jpg)
+* -w, --width	: Set image width <size>
+* -h, --height	: Set image height <size>
+* -o, --output	: Output filename <filename> (to write to stdout, use '-o -'). If not specified, no file is saved
+* -v, --verbose	: Output verbose information during run
+* -sh, --sharpness	: Set image sharpness (-100 to 100)
+* -co, --contrast	: Set image contrast (-100 to 100)
+* -br, --brightness	: Set image brightness (0 to 100)
+* -sa, --saturation	: Set image saturation (-100 to 100)
 
 ## Use a USB Camera and fswebcam
 If you're using an external USB camera, you won't be able to use raspistill, but you can use another app. The Raspberry Pi site has a good [tutorial on using an external USB camera with fswebcam](https://www.raspberrypi.org/documentation/usage/webcams/).
