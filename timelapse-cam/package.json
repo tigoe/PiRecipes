@@ -1,0 +1,29 @@
+{
+  "name": "timelapse-cam",
+  "version": "0.0.1",
+  "description": "A timelapse camera webserver app using fswebcam",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-webcam": "^0.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tigoe/NodeExamples.git"
+  },
+  "keywords": [
+    "fswebcam",
+    "webcam"
+  ],
+  "author": "Tom Igoe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tigoe/NodeExamples/issues"
+  },
+  "homepage": "https://github.com/tigoe/NodeExamples#readme"
+}
