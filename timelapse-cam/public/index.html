@@ -3,10 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <script src="script.js"></script>
+<link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
  <title>Webcam</title>
 </head>
 <body>
+<label>image width: 
+  <input type="text" class="control" name="width" value="1280" size="8">
+</label>
+<span id="width"></span><br>
+
+<label>image height: 
+  <input type="text" name="height" value="720" size="8">
+</label>
+<span id="height"></span><br>
+<label>image quality: 
+  <input type="range" class="control" name="quality" min="0" max="100" value="90">
+</label>
+<span id="quality"></span><br>
+
+<label>frames to capture: 
+  <input type="range" class="control" name="frames" min="1" max="60" value="30">
+</label>
+<span id="frames"></span><br>
+
+<label>capture delay: 
+  <input type="range" class="control" name="delay" min="0" max="60" value="0">
+</label>
+<span id="delay"></span><br>
+
+<label>image type:
+<select name="image-type" class="control" id="output">
+  <option value="jpeg">jpeg</option>
+  <option value="png">png</option>
+</select>
+</label><br>
+
+<label>camera:
+<select name="device" class="control" id="device">
+</select>
+</label><br>
+
+  <!-- options = {
+    saveShots: true,   // save shots in memory
+    output: "jpeg",    // jpeg or png
+    // Which camera to use:
+    // Webcam.list() lists devices in /dev/video *
+    // use false for default:
+    device: false,
+    // what to return from the image capture: 
+    // file location, buffer or base64
+    callbackReturn: "location",
+    verbose: false    // logging output
+  }; -->
+
   <img id="webcam" alt="A webcam image">
 </body>
 </html>

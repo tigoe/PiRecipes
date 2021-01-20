@@ -1,0 +1,17 @@
+
+input {
+  position: sticky;
+  left: 150px;
+  margin: 2px;
+}
+
+select {
+  position: sticky;
+  left: 150px;
+  margin: 2px;
+}
+
+span {
+  position: sticky;
+  left: 320px;
+}

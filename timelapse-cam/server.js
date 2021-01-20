@@ -16,11 +16,11 @@ const express = require('express');	      // include the express library
 var server = express();					          // create a server using express
 server.use('/',express.static('public')); // serve static files from /public
 const imageDir = 'public/img/';
-let lastImage = '';
+var lastImage = '';
 
 // this runs after the server successfully starts:
 function serverStart() {
-  var port = this.address().port;
+  let port = this.address().port;
   console.log('Server listening on port '+ port);
 }
 
@@ -72,5 +72,16 @@ function takePicture() {
  function getLatest(request, response) {
    response.end(lastImage.substring(6));
  }
+
+ function getCameraList(request, response) {
+  
+  function getList(cameras) {
+    response.end(cameras);
+  }
+
+  cam.list(getList);
+ }
+
 server.listen(8080, serverStart);  // start the server
 server.get('/latest', getLatest);
+server.get('/cameras', getCameraList);
