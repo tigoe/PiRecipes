@@ -14,14 +14,16 @@
 const camDriver = require("node-webcam");
 const express = require('express');	      // include the express library
 var server = express();					          // create a server using express
-server.use('/',express.static('public')); // serve static files from /public
+server.use('/', express.static('public')); // serve static files from /public
+server.use(express.json()); 						  // for  application/json
+var interval;         // capture interval
 const imageDir = 'public/img/';
 var lastImage = '';
 
 // this runs after the server successfully starts:
 function serverStart() {
   let port = this.address().port;
-  console.log('Server listening on port '+ port);
+  console.log('Server listening on port ' + port);
 }
 
 //Default options
@@ -45,7 +47,7 @@ var options = {
   verbose: false    // logging output
 };
 // Create camera instance:
- let cam = camDriver.create(options);
+let cam = camDriver.create(options);
 
 // callback function for the image capture function:
 function getResult(error, data) {
@@ -53,35 +55,57 @@ function getResult(error, data) {
     console.log(error);
   } else {
     lastImage = data;
-    console.log(data);
   }
 }
 
 function takePicture() {
   let timestamp = new Date()    // get current date and time
-  .toISOString()        // convert to e.g. 2012-11-04T14:51:06.157Z
-  .replace(/T/, '_')    // replace T with _
-  .replace(/:\d+\..+/, ''); // delete all after minutes
-  let imagePath = imageDir + 'image'+ timestamp;
+    .toISOString()        // convert to e.g. 2012-11-04T14:51:06.157Z
+    .replace(/T/, '_')    // replace T with _
+    .replace(/\..+/, ''); // delete all after seconds integer
+  let imagePath = imageDir + 'image' + timestamp;
   // capture image (file type extension added automatically):
   cam.capture(imagePath, getResult);
 }
 
- setInterval(takePicture, 30000);
+function getLatest(request, response) {
+  response.end(lastImage.substring(6));
+}
 
- function getLatest(request, response) {
-   response.end(lastImage.substring(6));
- }
+function getCameraList(request, response) {
 
- function getCameraList(request, response) {
-  
   function getList(cameras) {
-    response.end(cameras);
+    response.end(JSON.stringify(cameras));
+    response.end('here is a list');
   }
 
   cam.list(getList);
- }
+}
+
+function readParams(request, response) {
+  // iterate over the body JSON
+  for (i in request.body) {
+    // if options has a property by the same name:
+    if (options.hasOwnProperty(i)) {
+      // update the options property:
+      options[i] = request.body[i];
+    }
+    if (i === 'interval') {
+      // set capture interval:
+      clearInterval(interval);  // have to clear it first
+      interval = setInterval(takePicture, request.body[i] * 1000);
+      console.log(request.body[i] * 1000);
+    }
+  }
+  console.log(options);
+  response.end(JSON.stringify(request.body));
+}
+
+
 
 server.listen(8080, serverStart);  // start the server
 server.get('/latest', getLatest);
 server.get('/cameras', getCameraList);
+server.post('/params', readParams);
+// set capture interval:
+interval = setInterval(takePicture, 5000);

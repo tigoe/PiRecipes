@@ -8,6 +8,7 @@
  <title>Webcam</title>
 </head>
 <body>
+  <form id="camForm"">
 <label>image width: 
   <input type="text" class="control" name="width" value="1280" size="8">
 </label>
@@ -33,30 +34,25 @@
 <span id="delay"></span><br>
 
 <label>image type:
-<select name="image-type" class="control" id="output">
+<select name="output" class="control" id="output">
   <option value="jpeg">jpeg</option>
   <option value="png">png</option>
 </select>
 </label><br>
 
 <label>camera:
-<select name="device" class="control" id="device">
+<select name="device" id="device" class="control">
 </select>
 </label><br>
 
-  <!-- options = {
-    saveShots: true,   // save shots in memory
-    output: "jpeg",    // jpeg or png
-    // Which camera to use:
-    // Webcam.list() lists devices in /dev/video *
-    // use false for default:
-    device: false,
-    // what to return from the image capture: 
-    // file location, buffer or base64
-    callbackReturn: "location",
-    verbose: false    // logging output
-  }; -->
+<label>capture interval: 
+  <input type="range" class="control" name="interval" min="0" max="300" value="60">
+</label>
+<span id="interval"></span><br>
 
+
+<input type="button" value="update camera" onclick="sendParams();">
+</form>
   <img id="webcam" alt="A webcam image">
 </body>
 </html>
