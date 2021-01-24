@@ -10,33 +10,34 @@
 <body>
   <form id="camForm"">
 <label>image width: 
-  <input type="text" class="control" name="width" value="1280" size="8">
+  <input type="text" class="control" name="width" size="8">
 </label>
-<span id="width"></span><br>
+<span class="data"  id="width"></span><br>
 
 <label>image height: 
-  <input type="text" name="height" value="720" size="8">
+  <input type="text" name="height" size="8">
 </label>
-<span id="height"></span><br>
+<span class="data"  id="height"></span><br>
+
 <label>image quality: 
-  <input type="range" class="control" name="quality" min="0" max="100" value="90">
+  <input type="range" class="control" name="quality" min="0" max="100" >
 </label>
-<span id="quality"></span><br>
+<span class="data"  id="quality"></span><br>
 
 <label>frames to capture: 
-  <input type="range" class="control" name="frames" min="1" max="60" value="30">
+  <input type="range" class="control" name="frames" min="1" max="60">
 </label>
-<span id="frames"></span><br>
+<span class="data"  id="frames"></span><br>
 
 <label>capture delay: 
-  <input type="range" class="control" name="delay" min="0" max="60" value="0">
+  <input type="range" class="control" name="delay" min="0" max="60">
 </label>
-<span id="delay"></span><br>
+<span class="data"  id="delay"></span><br>
 
 <label>image type:
 <select name="output" class="control" id="output">
-  <option value="jpeg">jpeg</option>
-  <option value="png">png</option>
+  <option>jpeg</option>
+  <option>png</option>
 </select>
 </label><br>
 
@@ -46,12 +47,11 @@
 </label><br>
 
 <label>capture interval: 
-  <input type="range" class="control" name="interval" min="0" max="300" value="60">
+  <input type="range" class="control" name="interval" min="0" max="300">
 </label>
-<span id="interval"></span><br>
+<span class="data"  id="interval"></span><br>
 
-
-<input type="button" value="update camera" onclick="sendParams();">
+<input type="button" value="Update Parameters" onclick="sendParams();">
 </form>
   <img id="webcam" alt="A webcam image">
 </body>

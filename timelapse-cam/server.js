@@ -44,7 +44,8 @@ var options = {
   // what to return from the image capture: 
   // file location, buffer or base64
   callbackReturn: "location",
-  verbose: false    // logging output
+  verbose: false,    // logging output
+  interval: 60
 };
 // Create camera instance:
 let cam = camDriver.create(options);
@@ -82,30 +83,33 @@ function getCameraList(request, response) {
   cam.list(getList);
 }
 
-function readParams(request, response) {
+function postParams(request, response) {
   // iterate over the body JSON
-  for (i in request.body) {
+  for (item in request.body) {
     // if options has a property by the same name:
-    if (options.hasOwnProperty(i)) {
+    if (options.hasOwnProperty(item)) {
       // update the options property:
-      options[i] = request.body[i];
+      options[item] = request.body[item];
     }
-    if (i === 'interval') {
+    if (item === 'interval') {
       // set capture interval:
       clearInterval(interval);  // have to clear it first
-      interval = setInterval(takePicture, request.body[i] * 1000);
-      console.log(request.body[i] * 1000);
+      interval = setInterval(takePicture, request.body[item] * 1000);
     }
   }
-  console.log(options);
-  response.end(JSON.stringify(request.body));
+  response.json(options);
 }
 
 
+function getParams(request, response) {
+  response.json(options);
+}
 
 server.listen(8080, serverStart);  // start the server
 server.get('/latest', getLatest);
 server.get('/cameras', getCameraList);
-server.post('/params', readParams);
+server.post('/params', postParams);
+server.get('/params', getParams);
 // set capture interval:
-interval = setInterval(takePicture, 5000);
+interval = setInterval(takePicture, options.interval * 1000);
+
