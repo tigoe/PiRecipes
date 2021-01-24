@@ -6,6 +6,11 @@
   page fetches a new image periodically from the /latest
   endpoint. 
 
+  In order to make this work you need to install fswebcam, 
+  because the node-webcam library uses that as its camera app.
+  For more on this, see 
+  https://www.raspberrypi.org/documentation/usage/webcams/
+
   created 19 Jan 2021
   by Tom Igoe
 */
