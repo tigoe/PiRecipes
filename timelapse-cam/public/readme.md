@@ -1,6 +1,6 @@
 # A Timelapse Webcam Application
 
-This application uses node.js and fswebcam to create a timelapse cam. You can use it with a Pi camera, or with a USB webcam. 
+This application uses node.js and [fswebcam](https://www.raspberrypi.org/documentation/usage/webcams/) to create a timelapse cam. You can use it with a Pi camera, or with a USB webcam. 
 
 ## Installation
 To run this app, you'll need to install the following components on your Pi:
