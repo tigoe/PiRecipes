@@ -7,9 +7,9 @@ The code can be found [in this repository](https://github.com/tigoe/PiRecipes/tr
 
 ## Installation
 To run this app, you'll need to install the following components on your Pi:
-* node.js and npm - the server side JS tools. The latest version doesn't run on the Pi, so I use XXX
-* pm2 - I use this to turn the server script into a daemon, keep logs, etc. 
-* fswebcam - the cam software. 
+* [node.js and npm](https://nodejs.org) - the server side JS tools. The latest version doesn't run on the Pi Zero, so I use the instructions from [this repo](https://github.com/sdesalas/node-pi-zero), which has distributions optimized for the Pi Zero.
+* [pm2](https://pm2.keymetrics.io/) - I use this to turn the server script into a daemon, keep logs, etc. 
+* [fswebcam](https://manpages.ubuntu.com/manpages/bionic/man1/fswebcam.1.html) - the cam software. 
 
 The command line installs are as follows:
 
@@ -35,13 +35,26 @@ The components are as follows:
 * [fswebcam](https://www.raspberrypi.org/documentation/usage/webcams/) - the webcam software taking the pictures
 
 ## The Server API
-The node.js server initializes fswebcam and takes a picture once on a regular interval. It has the following HTTP endpoints:
+The node.js server initializes fswebcam and takes a picture once on a regular interval. The images are saved in the `img` subdirectory of the `public` directory with the following filename format: `imageyyyy-mm-dd_hh:mm:ss.jpg` (or .png if you change the file format).
+
+The server has the following HTTP endpoints:
 
 * GET `/latest` - returns the path to the latest image. 
 * GET `/cameras` - returns a list of the cameras available to fswebcam, from the `/dev` directory. 
 * POST `/params` - sets the parameters of fswebcam and the intervam between image captures. Expects a JSON body with the available parameters of fswebcam, and an additional interval parameter. Returns the fswebcam parameters and interval.
 * GET `/params` - returns the fswebcam parameters and interval. 
 
+To run the server from the command line, type either
+
+````sh
+$ node server.js 
+````
+or if you want to run it in the background, 
+
+````sh
+$ pm2 start server.js
+````
 ## The Client Interface
 
-The client interface shows the latest image and a series of input controls to change the fswebcam settings. Clicking Update Settings updates the server's fswebcam settings. 
+The client interface shows the latest image and a series of input controls to change the fswebcam settings. Clicking the Update Parameters button updates the server's fswebcam settings. The client starts by getting the fswebcam parameters from the server and the list of cameras and populates its input elements with that information. Then it starts an interval which regularly fetches the latest image. 
+
