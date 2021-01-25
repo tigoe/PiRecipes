@@ -1,0 +1,21 @@
+{
+  "name": "dht-sensor",
+  "version": "0.0.1",
+  "description": "Example for DHT11/DHT22 sensor",
+  "main": "basic-read.js",
+  "dependencies": {
+    "node-dht-sensor": "^0.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dht11",
+    "dht22",
+    "nodejs",
+    "onewire"
+  ],
+  "author": "Tom Igoe",
+  "license": "ISC"
+}

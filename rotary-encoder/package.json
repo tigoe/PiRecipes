@@ -1,0 +1,21 @@
+{
+    "name": "rotary",
+    "version": "0.0.1",
+    "description": "A rotary encoder example",
+    "main": "index.js",
+    "dependencies": {
+      "onoff-rotary": "^1.0.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "rotary",
+      "encoder",
+      "gpio",
+      "onoff"
+    ],
+    "author": "Tom Igoe",
+    "license": "MIT"
+  }

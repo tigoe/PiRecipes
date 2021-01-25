@@ -1,0 +1,22 @@
+{
+    "name": "gpioin",
+    "version": "0.0.1",
+    "description": "an example of how to control GPIO pins",
+    "main": "index.js",
+    "dependencies": {
+      "onoff": "^3.2.7"
+    },
+    "devDependencies": {},
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "gpio",
+      "digital",
+      "in",
+      "digital",
+      "out"
+    ],
+    "author": "Tom Igoe",
+    "license": "MIT"
+  }
