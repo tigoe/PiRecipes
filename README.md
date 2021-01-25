@@ -19,7 +19,7 @@ The first thing you should do for any Pi-based project is to configure a secure 
 * [Backing Up a Pi Disk](backups.md)
 * [Cron Jobs](cronjobs.md)
 * [Time Lapse Photography](timelapse.md)
-  * [Timelaps Webcam](timelapse-cam)
+  * [Timelapse Webcam](timelapse-cam)
 * [Using X11 for Windowed applications through the command line](X11.md)
 
 ### Physical I/O Recipes
