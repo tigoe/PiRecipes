@@ -1,0 +1,1 @@
+### Reading a DHT Temperature and Humidity Sensor

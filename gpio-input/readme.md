@@ -2,6 +2,9 @@
 
 This example shows how to read digital inputs and control digital outputs on an embedded board using the [node.js onoff library](https://www.npmjs.com/package/onoff). This example was tested on a Raspberry Pi Zero.
 
+## The Code
+The code can be found [in this repository](https://github.com/tigoe/PiRecipes/tree/master/gpio-input).
+
 ## The Circuit
 
 One terminal of a pushbutton is attached to the Pi Zero's pin 18 (sixth pin down from the SD card slot on the right side). The other terminal of the pushbutton is attached to the Pi's 3.3V pin (first pin down on the left). One terminal of a 220-ohm resistor is attached to pin 17 (sixth pin down on the left side). An LED's anode is attached to the other terminal of the resistor. The LED's cathode is attached to ground on the Pi (third pin down on the right). The circuit is shown in Figure 1 below.
