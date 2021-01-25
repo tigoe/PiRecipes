@@ -1,1 +1,1 @@
-### Reading a DHT Temperature and Humidity Sensor
+# Reading a DHTxx Temperature and Humidity Sensor 
