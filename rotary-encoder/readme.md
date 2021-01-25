@@ -14,19 +14,19 @@ This configuration works for the pushbutton because pins 5 and 6 are configured 
 
 ![Figure 1. Rotary encoder connected to Raspberry Pi's GPIO pins](pi-rotary-encoder_bb.png)
 
-_Figure 1. Rotary encoder connected to Raspberry Pi's GPIO pins. The encoder connects to GPIO 5 and 5 and ground._
+_Figure 1. Rotary encoder connected to Raspberry Pi's GPIO pins. The encoder connects to GPIO 5 and 6 and ground._
 
 ## Installing the Library
 
 Type the following on the command line of your Pi to install the library:
 
-````
+````sh
 $ npm install onoff-rotary
 ````
 
 Alternatively, if you clone this repository, you'll get the whole directory, and can install mcp-spi-adc using the package.json file like so:
 
-````
+````sh
 $ npm install
 ````
 
@@ -34,7 +34,7 @@ $ npm install
 
 Once you have the library installed, you're ready to go. See the index.js file in this repo for detailed notes. Note that you will have to run this script using sudo on the Pi. So, to test the script, type:
 
-````
+````sh
 $ sudo node index.js
 ````
 And you should get some encoder readings: 1 for one direction, and -1 for the other, depending on how you wired the pins.
