@@ -1,6 +1,7 @@
 # MCP3008 Analog-to-Digital Converter
 
 The MCP3008 is an inexpensive analog-to-digital converter that has an SPI interface. Each channel has 10-bit resolution, so it's a perfect ADC for use with the Pi or a BeagleBone or other embedded board. 
+
 ## The Code
 The code can be found [in this repository](https://github.com/tigoe/PiRecipes/tree/master/adc-mcp-3xxx).
 

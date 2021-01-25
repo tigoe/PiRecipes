@@ -2,6 +2,9 @@
 
 This example shows how to read a rotary encoder attached to two digital inputs. It uses  the [node.js onoff-rotary library](https://www.npmjs.com/package/onoff-rotary). This example was tested on a Raspberry Pi Zero.
 
+## The Code
+The code can be found [in this repository](https://github.com/tigoe/PiRecipes/tree/master/rotary-encoder).
+
 ## The Circuit
 
 The center terminal of a rotary encoder is attached to the Pi Zero's ground pin (fifteenth pin down from the SD card holder on the right). The two outer terminals of the encoder are attached to GPIO pins 5 and 6 (pins 15 and 16 down from the SD card on the right). The circuit is shown in Figure 1 below.
