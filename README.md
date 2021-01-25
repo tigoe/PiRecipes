@@ -19,6 +19,7 @@ The first thing you should do for any Pi-based project is to configure a secure 
 * [Backing Up a Pi Disk](backups.md)
 * [Cron Jobs](cronjobs.md)
 * [Time Lapse Photography](timelapse.md)
+  * [Timelaps Webcam](timelapse-cam)
 * [Using X11 for Windowed applications through the command line](X11.md)
 
 ### Physical I/O Recipes
@@ -26,3 +27,4 @@ The first thing you should do for any Pi-based project is to configure a secure 
 * [Rotary encoder input](rotary-encoder) using GPIO pins
 * [Connecting an analog-to-digital converter](adc-mcp-3xxx) for analog sensor input
 * [Connecting an SSD1306 OLED Display](SSD1306Display) via I2C
+* [Connecting a DHTxx Temperature and Humidity Sensor](dht-sensor)
