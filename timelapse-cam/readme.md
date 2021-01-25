@@ -3,7 +3,7 @@
 This application uses node.js and [fswebcam](https://www.raspberrypi.org/documentation/usage/webcams/) to create a timelapse cam. You can use it with a Pi camera, or with a USB webcam. Here is the [man page for fswebcam](https://manpages.ubuntu.com/manpages/bionic/man1/fswebcam.1.html). 
 
 ## The Code
-The code can be found [in this repository](https://github.com/tigoe/PiRecipes/tree/master/timelapse-webcam).
+The code can be found [in this repository](https://github.com/tigoe/PiRecipes/tree/master/timelapse-webcam). Copy all the files of the timelapse-cam directory onto your Pi. 
 
 ## Installation
 To run this app, you'll need to install the following components on your Pi:
@@ -21,6 +21,8 @@ $ sudo apt install fswebcam
 ````
 For more on installing node.js, see [this link](https://itp.nyu.edu/networks/setting-up-a-raspberry-pi/#Upgrading_nodejs).
 
+Once you have downloaded the git repository for the app onto your Pi, don't forget to `node install` to bring in the required libraries. 
+
 ## The Software Components
 The components are as follows:
 
@@ -36,6 +38,8 @@ The components are as follows:
 
 ## The Server API
 The node.js server initializes fswebcam and takes a picture once on a regular interval. The images are saved in the `img` subdirectory of the `public` directory with the following filename format: `imageyyyy-mm-dd_hh:mm:ss.jpg` (or .png if you change the file format).
+
+The server runs on port 8080.
 
 The server has the following HTTP endpoints:
 
@@ -58,3 +62,7 @@ $ pm2 start server.js
 
 The client interface shows the latest image and a series of input controls to change the fswebcam settings. Clicking the Update Parameters button updates the server's fswebcam settings. The client starts by getting the fswebcam parameters from the server and the list of cameras and populates its input elements with that information. Then it starts an interval which regularly fetches the latest image. 
 
+The interface is showin in Figure 1:
+
+![screenshot of a webcam inteface](timelapse-webcam-screenshot.jpg)
+**Figure 1. Screenshot of the timelapse webcam interface, showing the controls for setting fswebcam parameters at the top, and the camera image below.**
