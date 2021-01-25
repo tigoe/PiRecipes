@@ -65,4 +65,4 @@ The client interface shows the latest image and a series of input controls to ch
 The interface is showin in Figure 1:
 
 ![screenshot of a webcam inteface](public/img/timelapse-webcam-screenshot.png)
-**Figure 1. Screenshot of the timelapse webcam interface, showing the controls for setting fswebcam parameters at the top, and the camera image below.**
+_Figure 1. Screenshot of the timelapse webcam interface, showing the controls for setting fswebcam parameters at the top, and the camera image below._
