@@ -79,7 +79,6 @@ function getLatest(request, response) {
 }
 
 function getCameraList(request, response) {
-
   function getList(cameras) {
     response.end(JSON.stringify(cameras));
     response.end('here is a list');
