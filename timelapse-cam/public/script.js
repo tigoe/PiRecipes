@@ -1,3 +1,4 @@
+// capture interval:
 var interval;
 
 function setup() {
@@ -18,21 +19,17 @@ function setup() {
     i.addEventListener('change', updateValue);
   }
   // get the list of cameras:
-  fetchData('cameras', addCameras);
+  fetch(document.URL + 'cameras')
+  .then(response => response.text())  // convert response to text
+  .then(data => addCameras(data))    // get the body of the response
+  .catch(error => console.log(error));// if there is an error
+
 }
 
 // update the span corresponding to the element that changed:
 function updateValue(event) {
   let thisSpan = document.getElementById(event.target.name);
   thisSpan.innerHTML = event.target.value;
-}
-
-function fetchData(path, callback) {
-  // make the HTTP/S call:
-  fetch(document.URL + path)
-    .then(response => response.text())  // convert response to text
-    .then(data => callback(data))    // get the body of the response
-    .catch(error => console.log(error));// if there is an error
 }
 
 // function to call when you've got something to display:
@@ -118,4 +115,6 @@ function setParams(params) {
     interval = setInterval(getImage, params['interval'] * 1000);
     console.log('set parameters');
 }
+
+// start things up after DOM loads:
 window.addEventListener('DOMContentLoaded', setup);

@@ -8,18 +8,19 @@
  <title>Webcam</title>
 </head>
 <body>
+  <h1>Timelapse Cam</h1>
   <form id="camForm"">
-<label>image width: 
+<label>image width (px): 
   <input type="text" class="control" name="width" size="8">
 </label>
 <span class="data"  id="width"></span><br>
 
-<label>image height: 
+<label>image height (px): 
   <input type="text" name="height" size="8">
 </label>
-<span class="data"  id="height"></span><br>
+<span class="data" id="height"></span><br>
 
-<label>image quality: 
+<label>image quality (%): 
   <input type="range" class="control" name="quality" min="0" max="100" >
 </label>
 <span class="data"  id="quality"></span><br>
@@ -29,7 +30,7 @@
 </label>
 <span class="data"  id="frames"></span><br>
 
-<label>capture delay: 
+<label>capture delay (sec.): 
   <input type="range" class="control" name="delay" min="0" max="60">
 </label>
 <span class="data"  id="delay"></span><br>
@@ -41,12 +42,12 @@
 </select>
 </label><br>
 
-<label>camera:
+<label>camera (device path):
 <select name="device" id="device" class="control">
 </select>
 </label><br>
 
-<label>capture interval: 
+<label>capture interval (sec.): 
   <input type="range" class="control" name="interval" min="0" max="300">
 </label>
 <span class="data"  id="interval"></span><br>

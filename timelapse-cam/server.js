@@ -91,28 +91,26 @@ function getCameraList(request, response) {
   cam.list(getList);
 }
 
-// post request handler for 
+// request handler for 
 // a new set of parameters for fswebcam:
-function postParams(request, response) {
-  // iterate over the body JSON
-  for (item in request.body) {
-    // if options has a property by the same name:
-    if (options.hasOwnProperty(item)) {
-      // update the options property:
-      options[item] = request.body[item];
-    }
-    if (item === 'interval') {
-      // set capture interval:
-      clearInterval(interval);  // have to clear it first
-      interval = setInterval(takePicture, request.body[item] * 1000);
+function requestParams(request, response) {
+  // if it's a POST, you have new params:
+  if (request.method === 'POST') {
+    // iterate over the body JSON
+    for (item in request.body) {
+      // if options has a property by the same name:
+      if (options.hasOwnProperty(item)) {
+        // update the options property:
+        options[item] = request.body[item];
+      }
+      if (item === 'interval') {
+        // set capture interval:
+        clearInterval(interval);  // have to clear it first
+        interval = setInterval(takePicture, request.body[item] * 1000);
+      }
     }
   }
   // return the new options after setting them:
-  response.json(options);
-}
-
-// get request handler for the fswebcam options:
-function getParams(request, response) {
   response.json(options);
 }
 
@@ -122,9 +120,9 @@ var cam = camDriver.create(options);
 interval = setInterval(takePicture, options.interval * 1000);
 
 // start the server:
-server.listen(8080, serverStart);  
+server.listen(8080, serverStart);
 // server routes:
 server.get('/latest', getLatest);
 server.get('/cameras', getCameraList);
-server.post('/params', postParams);
-server.get('/params', getParams);
+// GET or POST for params use the same function:
+server.all('/params', requestParams);
