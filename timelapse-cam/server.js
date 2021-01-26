@@ -22,6 +22,7 @@ var server = express();					          // create a server using express
 server.use('/', express.static('public')); // serve static files from /public
 server.use(express.json()); 						  // for  application/json
 var interval;         // capture interval
+// where the images go:
 const imageDir = 'public/img/';
 var lastImage = '';
 
@@ -31,7 +32,7 @@ function serverStart() {
   console.log('Server listening on port ' + port);
 }
 
-//Default options
+//Default options for fswebcam:
 var options = {
   width: 1280,
   height: 720,
@@ -50,10 +51,10 @@ var options = {
   // file location, buffer or base64
   callbackReturn: "location",
   verbose: false,    // logging output
+  // this is not an fswebcam option, it's the capture interval
+  // for this server:
   interval: 60
 };
-// Create camera instance:
-let cam = camDriver.create(options);
 
 // callback function for the image capture function:
 function getResult(error, data) {
@@ -62,7 +63,6 @@ function getResult(error, data) {
   } else {
     lastImage = data;
   }
-}
 
 function takePicture() {
   let timestamp = new Date()    // get current date and time
@@ -74,10 +74,13 @@ function takePicture() {
   cam.capture(imagePath, getResult);
 }
 
+// get  latest image name:
 function getLatest(request, response) {
   response.end(lastImage.substring(6));
 }
 
+// get the list of camera devices:
+// TODO: get descriptions on these from the OS
 function getCameraList(request, response) {
   function getList(cameras) {
     response.end(JSON.stringify(cameras));
@@ -87,6 +90,8 @@ function getCameraList(request, response) {
   cam.list(getList);
 }
 
+// post request handler for 
+// a new set of parameters for fswebcam:
 function postParams(request, response) {
   // iterate over the body JSON
   for (item in request.body) {
@@ -101,19 +106,25 @@ function postParams(request, response) {
       interval = setInterval(takePicture, request.body[item] * 1000);
     }
   }
+  // return the new options after setting them:
   response.json(options);
 }
 
-
+// get request handler for the fswebcam options:
 function getParams(request, response) {
   response.json(options);
 }
 
-server.listen(8080, serverStart);  // start the server
+// Create camera instance:
+var cam = camDriver.create(options);
+// set capture interval:
+interval = setInterval(takePicture, options.interval * 1000);
+
+// start the server:
+server.listen(8080, serverStart);  
+// server routes:
 server.get('/latest', getLatest);
 server.get('/cameras', getCameraList);
 server.post('/params', postParams);
 server.get('/params', getParams);
-// set capture interval:
-interval = setInterval(takePicture, options.interval * 1000);
 
