@@ -63,6 +63,7 @@ function getResult(error, data) {
   } else {
     lastImage = data;
   }
+}
 
 function takePicture() {
   let timestamp = new Date()    // get current date and time
@@ -127,4 +128,3 @@ server.get('/latest', getLatest);
 server.get('/cameras', getCameraList);
 server.post('/params', postParams);
 server.get('/params', getParams);
-
