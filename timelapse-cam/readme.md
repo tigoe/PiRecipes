@@ -2,6 +2,11 @@
 
 This application uses node.js and [fswebcam](https://www.raspberrypi.org/documentation/usage/webcams/) to create a timelapse cam. You can use it with a Pi camera, or with a USB webcam. Here is the [man page for fswebcam](https://manpages.ubuntu.com/manpages/bionic/man1/fswebcam.1.html). 
 
+
+![screenshot of a webcam inteface](public/img/timelapse-webcam-screenshot.png)
+_Figure 1. Screenshot of the timelapse webcam interface, showing the controls for setting fswebcam parameters at the top, and the camera image below._
+
+
 ## The Code
 The code can be found [in this repository](https://github.com/tigoe/PiRecipes/tree/master/timelapse-cam). Copy all the files of the timelapse-cam directory onto your Pi. Make sure to copy the empty `img` directory too, or fswebcam will produce an error when it tries to save the first image. 
 
@@ -62,7 +67,4 @@ $ pm2 start server.js
 
 The client interface shows the latest image and a series of input controls to change the fswebcam settings. Clicking the Update Parameters button updates the server's fswebcam settings. The client starts by getting the fswebcam parameters from the server and the list of cameras and populates its input elements with that information. Then it starts an interval which regularly fetches the latest image. 
 
-The interface is showin in Figure 1:
-
-![screenshot of a webcam inteface](public/img/timelapse-webcam-screenshot.png)
-_Figure 1. Screenshot of the timelapse webcam interface, showing the controls for setting fswebcam parameters at the top, and the camera image below._
+The interface is shown in Figure 1 above.
