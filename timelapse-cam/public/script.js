@@ -108,6 +108,9 @@ function setParams(params) {
       if (s.id === n) {
         s.innerHTML = params[n];
       }
+      if (s.id === 'update') {
+        s.innerHTML = "updated " + new Date().toLocaleString();
+      }
     }
   }
     // set interval to call for a new image every 5 seconds:
