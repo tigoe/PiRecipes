@@ -34,8 +34,9 @@ function serverStart() {
 
 //Default options for fswebcam:
 var options = {
-  width: 1280,
-  height: 720,
+  width: 800,
+  height: 600,
+  rotation: 90,
   quality: 100,
   // Number of frames to capture. more frames means 
   // longer capture time and higher quality.
