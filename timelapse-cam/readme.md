@@ -26,7 +26,7 @@ The command line installs are as follows:
 
 ````sh
 $ sudo apt update
-$ wget -O - https://raw.githubusercontent.com/sdesalas/node-pi-zero/master/install-node-v11.5.0.sh | bash
+$ wget -O - https://raw.githubusercontent.com/sdesalas/node-pi-zero/master/install-node-v15.6.0.sh | bash
 $ npm install pm2 -g
 $ sudo apt install fswebcam
 ````
