@@ -27,7 +27,7 @@ The command line installs are as follows:
 ````sh
 $ sudo apt update
 $ wget -O - https://raw.githubusercontent.com/sdesalas/node-pi-zero/master/install-node-v11.5.0.sh | bash
-$ sudo apt install pm2
+$ npm install pm2 -g
 $ sudo apt install fswebcam
 ````
 For more on installing node.js, see [this link](https://itp.nyu.edu/networks/setting-up-a-raspberry-pi/#Upgrading_nodejs).
