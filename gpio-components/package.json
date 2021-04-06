@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "gpio-components": "^1.0.4"
+  },
+  "name": "gpio-components",
+  "version": "0.0.1",
+  "description": "examples for the gpio-components library",
+  "main": "button-led.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gpio",
+    "led",
+    "rotary",
+    "encoder",
+    "pushbutton"
+  ],
+  "author": "Tom Igoe",
+  "license": "ISC"
+}
