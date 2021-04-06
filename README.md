@@ -29,3 +29,9 @@ The first thing you should do for any Pi-based project is to configure a secure 
 * [Connecting an analog-to-digital converter](adc-mcp-3xxx) for analog sensor input
 * [Connecting an SSD1306 OLED Display](SSD1306Display) via I2C
 * [Connecting a DHTxx Temperature and Humidity Sensor](dht-sensor)
+
+For the physical I/O recipes, the Pi Pinouts shown in Figure 1 are useful. 
+
+![Pi Pinouts](pi_pinouts.png)
+
+_Figure 1. Pi pinouts_
