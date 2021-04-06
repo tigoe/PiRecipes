@@ -1,5 +1,7 @@
 # Rotary Encoder Input using GPIO 
 
+__This library does not work with versions of node.js later than 11. Instead, see the [GPIO components examples](../gpio-components/readme.md).__
+
 This example shows how to read a rotary encoder attached to two digital inputs. It uses  the [node.js onoff-rotary library](https://www.npmjs.com/package/onoff-rotary). This example was tested on a Raspberry Pi Zero.
 
 ## The Code

@@ -25,7 +25,7 @@ The first thing you should do for any Pi-based project is to configure a secure 
 
 ### Physical I/O Recipes
 * [Digital Input and Output using the GPIO pins](gpio-input)
-* [Rotary encoder input](rotary-encoder) using GPIO pins
+* [GPIO Components](gpio-components) includes examples for a rotary encoder, a pushbutton, and an LED using GPIO pins.
 * [Connecting an analog-to-digital converter](adc-mcp-3xxx) for analog sensor input
 * [Connecting an SSD1306 OLED Display](SSD1306Display) via I2C
 * [Connecting a DHTxx Temperature and Humidity Sensor](dht-sensor)
