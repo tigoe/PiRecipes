@@ -18,7 +18,7 @@ The first thing you should do for any Pi-based project is to configure a secure 
 
 * [Backing Up a Pi Disk](backups.md)
 * [Cron Jobs](cronjobs.md)
-* [Using X11 for Windowed applications through the command line](X11.md)
+* [Using VNC for Windowed applications through the command line](VNC.md)
 * [Time Lapse Photography](timelapse.md)
   * [Timelapse Webcam](timelapse-cam)
 
