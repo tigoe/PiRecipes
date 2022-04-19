@@ -39,7 +39,7 @@ You can change a number of options in the raspistill app. type `raspistill --hel
 * -sa, --saturation	: Set image saturation (-100 to 100)
 
 ## Use a USB Camera and fswebcam
-If you're using an external USB camera, you won't be able to use raspistill, but you can use another app. The Raspberry Pi site has a good [tutorial on using an external USB camera with fswebcam](https://www.raspberrypi.org/documentation/usage/webcams/).
+If you're using an external USB camera, you won't be able to use raspistill, but you can use another app. The Raspberry Pi site has a good [tutorial on using an external USB camera with fswebcam](https://www.raspberrypi.com/documentation/computers/os.html#using-a-usb-webcam).
 
 The advantage of using a USB camera is that you can get cheap ones, and they come with a variety of different features. The disadvantage is that you're on your own if they don't work with the built-in drivers.
 
